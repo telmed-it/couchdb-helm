@@ -78,7 +78,7 @@ persistentVolume:
 ## The CouchDB image
 image:
   repository: couchdb
-  tag: 3.3.2
+  tag: 3.3.3
   pullPolicy: IfNotPresent
 
 ## Experimental integration with Lucene-powered fulltext search
@@ -143,6 +143,7 @@ service:
   type: ClusterIP
   externalPort: 5984
   targetPort: 5984
+  externalName: "default"
   labels: {}
 
 ## An Ingress resource can provide name-based virtual hosting and TLS
