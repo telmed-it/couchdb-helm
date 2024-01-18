@@ -144,8 +144,10 @@ tolerations: []
 service:
   annotations: {}
   enabled: true
-  type: ClusterIP
-  externalPort: 5984
+  #type: ClusterIP
+  type: NodePort
+  nodePort: 30123
+  #externalPort: 5984
   targetPort: 5984
   externalName: "couchdb-prod-svc-couchdb"
   labels: {}
