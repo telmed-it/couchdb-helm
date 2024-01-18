@@ -145,7 +145,7 @@ service:
   type: ClusterIP
   externalPort: 5984
   targetPort: 5984
-  externalName: "couchdb"
+  externalName: "couchdb-prod-svc-couchdb"
   labels: {}
 
 ## An Ingress resource can provide name-based virtual hosting and TLS
