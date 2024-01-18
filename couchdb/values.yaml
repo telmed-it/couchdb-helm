@@ -66,14 +66,15 @@ serviceAccount:
 # provisioning of Persistent Volumes; leaving it unset will invoke the default
 # provisioner.
 persistentVolume:
-  enabled: false
+  enabled: true
   # NOTE: the number of existing claims must match the cluster size
-  existingClaims: []
+  existingClaims: ["couchdb-production"]
   annotations: {}
   accessModes:
     - ReadWriteOnce
   size: 10Gi
   # storageClass: "-"
+  storageClass: "local-path"
 
 ## The CouchDB image
 image:
