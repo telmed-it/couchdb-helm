@@ -18,9 +18,6 @@ spec:
   {{- end }}
   capacity:
     storage: {{ $.Values.persistentVolume.size }}
-  hostPath:
-    path: {{ $.Values.persistentVolume.path }}
-    type: {{ $.Values.persistentVolume.type }}
 {{ toYaml $claim.volumeSource | indent 2 }}
 ---
 {{- end }}

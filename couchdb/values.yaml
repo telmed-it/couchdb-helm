@@ -68,16 +68,14 @@ serviceAccount:
 persistentVolume:
   enabled: true
   # NOTE: the number of existing claims must match the cluster size
-  existingClaims: ["couchdb-production-0", "couchdb-production-1","couchdb-production-pv-0","couchdb-production-pv-1"]
+  existingClaims: []
   annotations: {}
   accessModes:
-    - ReadWriteOnce
-  size: 10Gi
+    - ReadWriteMany
+  size: 1024Gi
   # storageClass: "-"
   storageClass: "local-path"
-  #Path if Storageclass is local-path
-  path: "/opt/couchdb-production/data"
-  type: "DirectoryOrCreate"
+
 
 ## The CouchDB image
 image:
