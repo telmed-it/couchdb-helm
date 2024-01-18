@@ -68,7 +68,7 @@ serviceAccount:
 persistentVolume:
   enabled: true
   # NOTE: the number of existing claims must match the cluster size
-  existingClaims: ["couchdb-production"]
+  existingClaims: []
   annotations: {}
   accessModes:
     - ReadWriteOnce
