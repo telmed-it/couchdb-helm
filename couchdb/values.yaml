@@ -100,8 +100,8 @@ initImage:
 ## CouchDB is happy to spin up cluster nodes in parallel, but if you encounter
 ## problems you can try setting podManagementPolicy to the StatefulSet default
 ## `OrderedReady`
-#podManagementPolicy: Parallel
-podManagementPolicy: OrderedReady
+podManagementPolicy: Parallel
+#podManagementPolicy: OrderedReady
 
 ## To better tolerate Node failures, we can prevent Kubernetes scheduler from
 ## assigning more than one Pod of CouchDB StatefulSet per Node using podAntiAffinity.
