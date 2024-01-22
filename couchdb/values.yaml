@@ -145,8 +145,8 @@ tolerations: []
 service:
   annotations: {}
   enabled: true
-  type: ClusterIP
-  #type: NodePort
+  #type: ClusterIP
+  type: NodePort
   #nodePort: 30123
   externalPort: 5984
   targetPort: 5984
