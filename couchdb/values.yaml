@@ -71,7 +71,7 @@ persistentVolume:
   existingClaims: []
   annotations: {}
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   size: 1024Gi
   # storageClass: "-"
   storageClass: "local-path"

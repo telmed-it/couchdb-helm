@@ -17,7 +17,7 @@ spec:
   capacity:
     storage: 1024Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   hostPath:
     path: "/opt/couchdb-production/data"
     type: DirectoryOrCreate
@@ -41,7 +41,7 @@ spec:
   capacity:
     storage: 1024Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   hostPath:
     path: "/opt/couchdb-production/data"
     type: DirectoryOrCreate
