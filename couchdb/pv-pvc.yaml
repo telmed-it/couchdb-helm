@@ -17,7 +17,7 @@ spec:
   capacity:
     storage: 1024Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   hostPath:
     path: "/opt/couchdb-production/data"
     type: DirectoryOrCreate
@@ -41,31 +41,31 @@ spec:
   capacity:
     storage: 1024Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   hostPath:
     path: "/opt/couchdb-production/data"
     type: DirectoryOrCreate
 
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: couchdb-production-pv-2
-spec:
-  storageClassName: local-path
-  persistentVolumeReclaimPolicy: Retain
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - k3s3th-node
-  capacity:
-    storage: 1024Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/opt/couchdb-production2/data"
-    type: DirectoryOrCreate
+#---
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+#  name: couchdb-production-pv-2
+#spec:
+#  storageClassName: local-path
+#  persistentVolumeReclaimPolicy: Retain
+#  nodeAffinity:
+#    required:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: kubernetes.io/hostname
+#          operator: In
+#          values:
+#          - k3s3th-node
+#  capacity:
+#    storage: 1024Gi
+#  accessModes:
+#    - ReadWriteMany
+#  hostPath:
+#    path: "/opt/couchdb-production2/data"
+#    type: DirectoryOrCreate

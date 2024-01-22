@@ -1,5 +1,5 @@
 # -- the initial number of nodes in the CouchDB cluster.
-clusterSize: 3
+clusterSize: 2
 
 # -- If allowAdminParty is enabled the cluster will start up without any database
 # administrator account; i.e., all users will be granted administrative
@@ -71,7 +71,7 @@ persistentVolume:
   existingClaims: []
   annotations: {}
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   size: 1024Gi
   # storageClass: "-"
   storageClass: "local-path"
@@ -105,17 +105,17 @@ podManagementPolicy: Parallel
 
 ## To better tolerate Node failures, we can prevent Kubernetes scheduler from
 ## assigning more than one Pod of CouchDB StatefulSet per Node using podAntiAffinity.
-affinity: {}
-#   podAntiAffinity:
-#     requiredDuringSchedulingIgnoredDuringExecution:
-#       - labelSelector:
-#           matchExpressions:
-#             - key: "kubernetes.io/hostname"
-#               operator: In
-#               values:
-#               - k3s3th-node
-#               - telmed.cloud
-#         topologyKey: "kubernetes.io/hostname"
+affinity:
+   podAntiAffinity:
+     requiredDuringSchedulingIgnoredDuringExecution:
+       - labelSelector:
+           matchExpressions:
+             - key: "kubernetes.io/hostname"
+               operator: In
+               values:
+               - k3s3th-node
+               - telmed.cloud
+         topologyKey: "kubernetes.io/hostname"
 
 
 ## To control how Pods are spread across your cluster among failure-domains such as regions,
@@ -211,7 +211,7 @@ couchdbConfig:
   # couchdb:
   #  uuid: decafbaddecafbaddecafbaddecafbad # Unique identifier for this CouchDB server instance
   cluster:
-     q: 3 # Create 8 shards for each database
+     q: 4 # Create 8 shards for each database
   chttpd:
     bind_address: any
     # chttpd.require_valid_user disables all the anonymous requests to the port
