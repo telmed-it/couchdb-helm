@@ -1,5 +1,5 @@
 # -- the initial number of nodes in the CouchDB cluster.
-clusterSize: 2
+clusterSize: 3
 
 # -- If allowAdminParty is enabled the cluster will start up without any database
 # administrator account; i.e., all users will be granted administrative
