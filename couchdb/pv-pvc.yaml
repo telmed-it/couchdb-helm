@@ -5,7 +5,7 @@ metadata:
   name: couchdb-production-pv-0
 spec:
   storageClassName: local-path
-  persistentVolumeReclaimPolicy: Reclaim
+  persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -29,7 +29,7 @@ metadata:
   name: couchdb-production-pv-1
 spec:
   storageClassName: local-path
-  persistentVolumeReclaimPolicy: Reclaim
+  persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -53,7 +53,7 @@ metadata:
   name: couchdb-production-pv-2
 spec:
   storageClassName: local-path
-  persistentVolumeReclaimPolicy: Reclaim
+  persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
